@@ -1,32 +1,70 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <NavBar />
     <router-view/>
   </div>
 </template>
+<script>
+  import {mapState} from 'vuex'
+  import NavBar from "@/components/NavBar.vue";
 
+  export default {
+    components: {
+      NavBar
+    },
+    computed: mapState({
+      darkMode: state => state.darkMode
+    }),
+  }
+</script>
 <style>
+
+:root {
+  --background: #fff;
+  --text: #282c34;
+  --link: #2196f3;
+  --white: #fff;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  transition: 0.5s;
+}
+
+.dark {
+    --background: #282c34;
+    --text: #fff;
+    --link: #61dafb;
+    --white: #fff;
+  }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 
-#nav {
+nav {
   padding: 30px;
 }
 
-#nav a {
+a {
   font-weight: bold;
-  color: #2c3e50;
+  color: var(--link);
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+a.router-link-exact-active {
+  color: var(--link);
 }
+
+/*@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #282c34;
+    --text: #fff;
+    --link: #61dafb;
+    --white: #fff;
+  }
+}*/
 </style>
