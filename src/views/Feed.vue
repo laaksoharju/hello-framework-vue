@@ -54,7 +54,6 @@ export default {
       console.log(msg);
     },
     loadingListener() {
-        console.log("hej")
         const lastPostPos = this.$refs.feedItems.slice(-1)[0].getBoundingClientRect().top;
         const visiblePortion = document.documentElement.clientHeight;
         if( lastPostPos <= visiblePortion && !this.isFetchingMore)

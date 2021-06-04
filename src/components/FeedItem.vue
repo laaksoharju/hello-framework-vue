@@ -1,9 +1,8 @@
 <template>
   <div class="Feed-item">
     <img
-      crossorigin='anonymous'
       class="Feed-item-image"
-      src="https://picsum.photos/300"
+      :src="item.url"
       alt="Random pic from picsum"
     />
     <div class="Feed-item-info">
