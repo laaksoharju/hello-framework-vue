@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-import FeedItem from "@/components/FeedItem";
+import FeedItem from "@/components/FeedItem.vue"
 import Loader from 'vue-spinner/src/FadeLoader.vue'
 
 export default {

@@ -1,56 +1,22 @@
 <template>
-  <nav class="Nav-bar-container">
-    <ul class="Nav-bar">
-      <li>
-        <router-link to="/">Home</router-link> |
-      </li>
-      <li>
-        <router-link to="/feed">Feed</router-link>
-      </li>
-    </ul>
-    <ToggleSwitch
-        @input="toggleDarkMode()"
-        :value="darkMode"
+  <label class="switch">
+    <input
+      type="checkbox"
+      @input="$emit('input')"
+      :value="value"
     />
-  </nav>
+    <span class="slider round" />
+  </label>
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex'
-  import ToggleSwitch from '@/components/ToggleSwitch.vue'
-
   export default {
-    components: {
-      ToggleSwitch
-    },
-    computed: {
-      ...mapState ({
-        darkMode: state => state.darkMode
-      })
-    },
-    methods: {
-      ...mapActions(['toggleDarkMode'])
+    props: {
+      value: Boolean
     }
   }
 </script>
 <style scoped>
-
-.Nav-bar-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-right: 1.5em;
-}
-
-.Nav-bar {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-}
-
-.Nav-bar > * {
-  padding-right: 1em;
-}
 
 /* The switch - the box around the slider */
 .switch {

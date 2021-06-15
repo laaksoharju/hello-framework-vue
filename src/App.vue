@@ -5,16 +5,12 @@
   </div>
 </template>
 <script>
-  import {mapState} from 'vuex'
   import NavBar from "@/components/NavBar.vue";
 
   export default {
     components: {
       NavBar
-    },
-    computed: mapState({
-      darkMode: state => state.darkMode
-    }),
+    }
   }
 </script>
 <style>
@@ -59,12 +55,4 @@ a.router-link-exact-active {
   color: var(--link);
 }
 
-/*@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #282c34;
-    --text: #fff;
-    --link: #61dafb;
-    --white: #fff;
-  }
-}*/
 </style>
